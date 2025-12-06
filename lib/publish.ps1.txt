@@ -1,9 +1,9 @@
-
+flutter build web
 Remove-Item -Recurse -Force docs/*
-
 Copy-Item -Recurse -Force build/web/* docs/
-
 git add .
 git commit -m "update web"
-
 git push origin master
+
+
+<base href="/bible-quest/" />
