@@ -478,16 +478,15 @@ class ResultScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('Your Score: $score / $total', 
-            style: const TextStyle(fontSize: 40, fontWeight: FontWeight.bold)),
+            Text(
+              'Your Score: $score / $total',
+              style: const TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+            ),
             const SizedBox(height: 16),
-            Text('Merry Christmas 🎉', 
-                 style: const TextStyle(fontSize: 50)),
+            Text('Merry Christmas 🎉', style: const TextStyle(fontSize: 50)),
             const SizedBox(height: 32),
             const SizedBox(height: 100),
-           Text('Created By: GOSMO LTD PH',
-                style: TextStyle(fontSize: 8),
-
+            Text('Created By: GOSMO LTD PH', style: TextStyle(fontSize: 8)),
           ],
         ),
       ),
