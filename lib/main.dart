@@ -480,10 +480,10 @@ class ResultScreen extends StatelessWidget {
           children: [
             Text(
               'Your Score: $score / $total',
-              style: const TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+              style: const TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 16),
-            Text('Merry Christmas 🎉', style: const TextStyle(fontSize: 50)),
+            Text('Merry Christmas 🎉', style: const TextStyle(fontSize: 32)),
             const SizedBox(height: 32),
             const SizedBox(height: 100),
             Text('Created By: GOSMO LTD PH', style: TextStyle(fontSize: 8)),
