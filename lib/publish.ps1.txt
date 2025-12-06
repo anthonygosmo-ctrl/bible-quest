@@ -1,4 +1,4 @@
-flutter build web
+flutter build web --base-href="/bible-quest/"
 Remove-Item -Recurse -Force docs/*
 Copy-Item -Recurse -Force build/web/* docs/
 git add .
