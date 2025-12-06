@@ -398,8 +398,11 @@ class HomeScreen extends StatelessWidget {
               },
               child: const Text('Start Quest'),
             ),
-            const SizedBox(height: 40),
-            const Text('Created By: GOSMO LTD PH'),
+            const SizedBox(height: 100),
+            const Text(
+              'Created By: GOSMO LTD PH',
+              style: TextStyle(fontSize: 8),
+            ),
           ],
         ),
       ),
