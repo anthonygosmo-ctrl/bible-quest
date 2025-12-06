@@ -1,0 +1,12 @@
+# Step 1: Clean old docs folder
+Remove-Item -Recurse -Force docs/*
+
+# Step 2: Copy new build into docs
+Copy-Item -Recurse -Force build/web/* docs/
+
+# Step 3: Commit changes
+git add .
+git commit -m "Auto-publish Bible Quest update"
+
+# Step 4: Push to GitHub
+git push origin master
