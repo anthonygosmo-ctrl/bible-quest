@@ -526,7 +526,7 @@ class _ResultPageState extends State<ResultPage> {
 
   Future<void> submitToGitHub(String name, int score, int total) async {
     const token =
-        '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'; // Replace with your token
+        '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'; // Replace with your token
     const repo =
         'anthonygosmo-ctrl/bible-quest'; // e.g. anthonygosmo-ctrl/bible-quest
     final filePath = 'logs/${DateTime.now().toIso8601String()}.txt';
