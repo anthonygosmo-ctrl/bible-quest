@@ -1,0 +1,11 @@
+name: bible_quest
+description: A Bible-themed quiz app
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  http: ^0.13.6
+  cupertino_icons: ^1.0.8
