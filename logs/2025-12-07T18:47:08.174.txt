@@ -1,2 +1,0 @@
-Name: ton
-Score: 0 / 1
