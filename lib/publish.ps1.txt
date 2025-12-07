@@ -1,0 +1,72 @@
+flutter build web --base-href="/bible-quest/"
+Remove-Item -Recurse -Force docs/*
+Copy-Item -Recurse -Force build/web/* docs/
+git add .
+git commit -m "update web"
+git push origin master
+
+git add .
+git commit -m "update web"
+git push origin gh-pages
+
+<base href="/bible-quest/" />
+// const token = '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'; // Replace with your token
+    const repo = 'anthonygosmo-ctrl/bible-quest'; // e.g. anthonygosmo-
+
+
+    git pull origin master
+git push origin master
+
+git commit -m "Merge remote changes"
+
+// Dart link error fix copy it to .yaml
+name: bible_quest
+description: A Bible-themed quiz app
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  http: ^0.13.6
+  cupertino_icons: ^1.0.8
+
+  Open your pubspec.yaml in VS Code
+
+Replace the broken section with the version above
+
+Save the file
+
+Run:
+
+bash
+flutter pub get
+/////////////////////
+git checkout gh-pages
+rm -rf *
+cp -r build/web/* .  
+git add .
+git commit -m "Deploy Bible Quest web build"
+git push origin gh-pages
+////
+cd C:\Users\gosmo\bible_quest\bible_quest
+////////
+<base href="/bible/"> in index.html
+
+// publishing 
+flutter build web --base-href="/bible-quest/"
+git checkout gh-pages
+
+///
+https://github.com/settings/tokens
+classic
+repo
+workflow
+
+bfg-1.15.0.jar
+
+flutter build web --base-href="/bible-quest/"
+git add .
+git commit -m "Clean build after token removal"
+git push origin gh-pages
