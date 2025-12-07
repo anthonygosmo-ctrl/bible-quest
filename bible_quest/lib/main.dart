@@ -11,7 +11,10 @@ class BibleQuestApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(title: 'Bible Quest', home: const HomePage());
+    return MaterialApp(
+      title: 'Bible Quest',
+      home: const HomePage(),
+    );
   }
 }
 
@@ -27,25 +30,19 @@ class HomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text(
-              'Welcome to Bible Quest!',
-              style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
-            ),
+            const Text('Welcome to Bible Quest!',
+                style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold)),
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (_) => const QuestionPage()),
-                );
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (_) => const QuestionPage()));
               },
               child: const Text('Start Quest'),
             ),
             const SizedBox(height: 40),
-            const Text(
-              'Created By: GOSMO LTD PH',
-              style: TextStyle(fontSize: 10),
-            ),
+            const Text('Created By: GOSMO LTD PH',
+                style: TextStyle(fontSize: 10)),
           ],
         ),
       ),
@@ -59,11 +56,8 @@ class Question {
   final List<String> options;
   final int correctIndex;
 
-  Question({
-    required this.text,
-    required this.options,
-    required this.correctIndex,
-  });
+  Question(
+      {required this.text, required this.options, required this.correctIndex});
 }
 
 // ❓ Question Screen start of quest
@@ -453,7 +447,9 @@ class _QuestionPageState extends State<QuestionPage> {
   Widget build(BuildContext context) {
     // Guard: if we've finished, render a lightweight placeholder
     if (currentIndex >= questions.length) {
-      return const Scaffold(body: Center(child: CircularProgressIndicator()));
+      return const Scaffold(
+        body: Center(child: CircularProgressIndicator()),
+      );
     }
 
     final question = questions[currentIndex];
@@ -526,7 +522,7 @@ class _ResultPageState extends State<ResultPage> {
 
   Future<void> submitToGitHub(String name, int score, int total) async {
     const token =
-        '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'; // Replace with your token
+        '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'; // Replace with your token
     const repo =
         'anthonygosmo-ctrl/bible-quest'; // e.g. anthonygosmo-ctrl/bible-quest
     final filePath = 'logs/${DateTime.now().toIso8601String()}.txt';
@@ -534,9 +530,8 @@ class _ResultPageState extends State<ResultPage> {
 
     final encodedContent = base64Encode(utf8.encode(content));
 
-    final url = Uri.parse(
-      'https://api.github.com/repos/$repo/contents/$filePath',
-    );
+    final url =
+        Uri.parse('https://api.github.com/repos/$repo/contents/$filePath');
     final response = await http.put(
       url,
       headers: {
@@ -567,13 +562,12 @@ class _ResultPageState extends State<ResultPage> {
       builder: (_) => AlertDialog(
         title: const Text('Score Submitted'),
         content: Text(
-          "Thank you, $name!\nYour score: ${widget.score} / ${widget.total}",
-        ),
+            "Thank you, $name!\nYour score: ${widget.score} / ${widget.total}"),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
             child: const Text("OK"),
-          ),
+          )
         ],
       ),
     );
@@ -593,29 +587,29 @@ class _ResultPageState extends State<ResultPage> {
                 Text(
                   'Your Score: ${widget.score} / ${widget.total}',
                   style: const TextStyle(
-                    fontSize: 28,
-                    fontWeight: FontWeight.bold,
-                  ),
+                      fontSize: 28, fontWeight: FontWeight.bold),
                   textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 10),
-                const Text(
-                  'Merry Christmas 🎉',
-                  style: TextStyle(fontSize: 32),
-                ),
+                const Text('Merry Christmas 🎉',
+                    style: TextStyle(fontSize: 32)),
                 const SizedBox(height: 10),
-                const Text(
-                  'Created By: GOSMO LTD PH',
-                  style: TextStyle(fontSize: 8),
-                ),
+                const Text('Created By: GOSMO LTD PH',
+                    style: TextStyle(fontSize: 8)),
                 const SizedBox(height: 30),
-                TextField(
-                  controller: _nameController,
-                  decoration: const InputDecoration(
-                    labelText: 'Enter your name',
-                    border: OutlineInputBorder(),
+
+                // 🎯 Responsive name field
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: TextField(
+                    controller: _nameController,
+                    decoration: const InputDecoration(
+                      labelText: 'Enter your name',
+                      border: OutlineInputBorder(),
+                    ),
                   ),
                 ),
+
                 const SizedBox(height: 20),
                 ElevatedButton(
                   onPressed: _submitScore,
